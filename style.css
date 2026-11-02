@@ -1,0 +1,363 @@
+/* Soft Romantic Cute Soft Toys Theme */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Pacifico&family=Nunito:wght@300;400;600;700&display=swap');
+
+:root {
+  --pink: #ffb6c1;
+  --soft-pink: #ffe4e9;
+  --lavender: #e6e6fa;
+  --cream: #fff8f0;
+  --peach: #ffdab9;
+  --mint: #e0f7f4;
+  --soft-blue: #d6eaf8;
+  --text: #5a4a4a;
+  --accent: #ff6b9d;
+  --shadow: rgba(255, 107, 157, 0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #fff8f0 0%, #ffe4e9 40%, #e6e6fa 100%);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Floating soft toys & hearts background */
+.bg-toys {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.toy {
+  position: absolute;
+  font-size: 2.2rem;
+  opacity: 0.55;
+  animation: floatToy 12s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(255, 107, 157, 0.2));
+}
+
+.toy:nth-child(1) { left: 5%; top: 15%; animation-delay: 0s; font-size: 2.8rem; }
+.toy:nth-child(2) { left: 15%; top: 70%; animation-delay: 2s; font-size: 2rem; }
+.toy:nth-child(3) { left: 80%; top: 20%; animation-delay: 4s; font-size: 2.5rem; }
+.toy:nth-child(4) { left: 70%; top: 65%; animation-delay: 1s; font-size: 2.2rem; }
+.toy:nth-child(5) { left: 40%; top: 10%; animation-delay: 3s; font-size: 1.8rem; }
+.toy:nth-child(6) { left: 25%; top: 40%; animation-delay: 5s; font-size: 2.4rem; }
+.toy:nth-child(7) { left: 90%; top: 50%; animation-delay: 2.5s; font-size: 2rem; }
+.toy:nth-child(8) { left: 55%; top: 80%; animation-delay: 6s; font-size: 2.6rem; }
+
+@keyframes floatToy {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-25px) rotate(5deg); }
+}
+
+.heart {
+  position: absolute;
+  font-size: 1.4rem;
+  color: #ff6b9d;
+  opacity: 0.4;
+  animation: floatHeart 8s ease-in-out infinite;
+}
+
+.heart:nth-child(9) { left: 10%; top: 30%; animation-delay: 1s; }
+.heart:nth-child(10) { left: 60%; top: 25%; animation-delay: 3s; }
+.heart:nth-child(11) { left: 85%; top: 75%; animation-delay: 0.5s; }
+.heart:nth-child(12) { left: 30%; top: 85%; animation-delay: 4s; }
+
+@keyframes floatHeart {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
+  50% { transform: translateY(-18px) scale(1.2); opacity: 0.7; }
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 12px;
+  background: rgba(255, 248, 240, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid rgba(255, 182, 193, 0.4);
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 16px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.nav a:hover,
+.nav a.active {
+  background: linear-gradient(135deg, #ffb6c1, #ff6b9d);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px var(--shadow);
+}
+
+/* Main content */
+.container {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 20px 60px;
+}
+
+/* Cards */
+.card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 28px;
+  padding: 36px 28px;
+  box-shadow: 0 12px 40px rgba(255, 107, 157, 0.15);
+  border: 2px solid rgba(255, 182, 193, 0.35);
+  margin-bottom: 28px;
+  animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1, h2 {
+  font-family: 'Pacifico', cursive;
+  color: #ff6b9d;
+  text-align: center;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 8px rgba(255, 107, 157, 0.2);
+}
+
+h1 { font-size: 2.6rem; }
+h2 { font-size: 1.9rem; }
+
+.subtitle {
+  text-align: center;
+  font-size: 1.15rem;
+  color: #7a6a6a;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+/* Soft toy mascot */
+.mascot {
+  text-align: center;
+  font-size: 5rem;
+  margin: 10px 0 20px;
+  animation: bounceSoft 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 8px 16px rgba(255, 107, 157, 0.3));
+}
+
+@keyframes bounceSoft {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-12px) scale(1.05); }
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #ffb6c1, #ff6b9d);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  box-shadow: 0 8px 20px var(--shadow);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(255, 107, 157, 0.4);
+}
+
+.btn-center {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+/* Music player */
+.music-box {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 200;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50px;
+  padding: 10px 18px;
+  box-shadow: 0 8px 25px var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid rgba(255, 182, 193, 0.5);
+}
+
+.music-box button {
+  background: linear-gradient(135deg, #ffb6c1, #ff6b9d);
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.music-box button:hover {
+  transform: scale(1.1);
+}
+
+.music-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ff6b9d;
+}
+
+/* Photos grid */
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.photo-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(255, 107, 157, 0.15);
+  border: 3px solid #ffe4e9;
+  transition: transform 0.35s ease, box-shadow 0.35s;
+  cursor: pointer;
+}
+
+.photo-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 16px 35px rgba(255, 107, 157, 0.3);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-card .caption {
+  padding: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ff6b9d;
+}
+
+/* Message page */
+.message-content {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  text-align: center;
+  color: #5a4a4a;
+  padding: 10px 5px;
+}
+
+.message-content p {
+  margin-bottom: 18px;
+}
+
+.highlight {
+  color: #ff6b9d;
+  font-weight: 700;
+}
+
+/* Special page */
+.big-heart {
+  font-size: 6rem;
+  text-align: center;
+  animation: pulseHeart 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 6px 12px rgba(255, 107, 157, 0.4));
+}
+
+@keyframes pulseHeart {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.love-text {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.2rem;
+  text-align: center;
+  color: #ff6b9d;
+  margin: 20px 0;
+}
+
+/* Soft toy row */
+.toy-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+  font-size: 3.2rem;
+}
+
+.toy-row span {
+  animation: bounceSoft 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+.toy-row span:nth-child(2) { animation-delay: 0.3s; }
+.toy-row span:nth-child(3) { animation-delay: 0.6s; }
+.toy-row span:nth-child(4) { animation-delay: 0.9s; }
+.toy-row span:nth-child(5) { animation-delay: 1.2s; }
+
+/* Footer note */
+.footer-note {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #9a8a8a;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  .nav a { font-size: 0.8rem; padding: 6px 10px; }
+  .container { padding: 90px 14px 50px; }
+  .card { padding: 24px 18px; }
+  .mascot { font-size: 4rem; }
+  .music-box { bottom: 16px; right: 12px; padding: 8px 12px; }
+}
